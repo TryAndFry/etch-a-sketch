@@ -118,6 +118,11 @@ function clearSketch(event){//remove background from all boxes
     if(!eraserMode) grid.children.item(xCoord).children.item(yCoord).style.backgroundColor=`${colorInput.value}`;
 }
 
+function handleColorChange(event){
+    document.documentElement.style.setProperty('--selected-background-color',this.value);
+    grid.children.item(xCoord).children.item(yCoord).style.backgroundColor=`var(--selected-background-color)`; 
+}
+
 
 clearButton.addEventListener('click',clearSketch)
 gridSize.addEventListener('mousemove',changeGrid)
@@ -125,3 +130,4 @@ gridSize.addEventListener('change',changeGrid2)
 gridSize.addEventListener('mousedown', () => gridBoolean=true);
 gridSize.addEventListener('mouseup',() => gridBoolean=false);
 window.addEventListener('keydown' , fillInBox)
+colorInput.addEventListener('change', handleColorChange)

@@ -48,12 +48,16 @@
 </script>
 <style>
 
+    :root{
+        --selected-background-color: black;
+    }
+
     @keyframes pointer {
         0% {
             background-color: #FFF;
         }
         100%{
-            background-color:rgb(148, 184, 150)
+            background-color:var(--selected-background-color)
         }
     }
 
@@ -80,6 +84,8 @@
 
     h1{
         font-family: 'Andale Mono', monospace ;
+        margin: 0;
+        padding: 0;
     }
     
     .drawing-area{
